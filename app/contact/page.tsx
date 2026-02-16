@@ -76,7 +76,7 @@ const ContactSection = () => {
         body: JSON.stringify(formData),
       })
 
-      const data = await res.json()
+      const data = await res.json();
 
       if (data.success) {
         alert("✅ Message sent successfully!")
