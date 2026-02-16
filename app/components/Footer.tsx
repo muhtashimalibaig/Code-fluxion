@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import Link from "next/link";
+"use client"
+import React from "react"
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import Link from "next/link"
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8'>
         {/* Agency Info */}
         <div>
-          <h2 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-purple-500 to-pink-500'>
+          <h2 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420] underline'>
             VIZL WEB AGENCY
           </h2>
           <p className='mt-4 text-gray-400'>
@@ -34,7 +34,9 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className='text-xl font-semibold mb-4'>Quick Links</h3>
+          <h3 className='text-xl font-semibold mb-4 text-green-400'>
+            Quick Links
+          </h3>
           <ul className='space-y-2'>
             <li>
               <Link href={"/home"}>Home</Link>
@@ -59,7 +61,9 @@ const Footer = () => {
 
         {/* Services */}
         <div>
-          <h3 className='text-xl font-semibold mb-4'>Services</h3>
+          <h3 className='text-xl font-semibold mb-4 text-green-400'>
+            Services
+          </h3>
           <ul className='space-y-2'>
             <li>
               <Link href={"/services"}>Web Development</Link>
@@ -78,7 +82,7 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
-          <h3 className='text-xl font-semibold mb-4'>Contact</h3>
+          <h3 className='text-xl font-semibold mb-4 text-green-400'>Contact</h3>
           <p className='mt-2 text-gray-400'>
             Email: muhtashimmughal5@gmail.com
           </p>
@@ -90,7 +94,7 @@ const Footer = () => {
         © {new Date().getFullYear()} VIZL WEB AGENCY. All rights reserved.
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

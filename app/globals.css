@@ -13,6 +13,11 @@
   }
 }
 
+:root::selection {
+  background: #08cb00;
+  color: #000;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);

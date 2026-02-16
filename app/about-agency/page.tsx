@@ -55,7 +55,7 @@ const AboutAgency = () => {
       <div className='max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12'>
         {/* Text Section */}
         <div ref={textRef} className='md:w-1/2'>
-          <h2 className='text-4xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-purple-500 to-pink-500 drop-shadow-[0_0_10px_rgba(236,72,153,0.8)]'>
+          <h2 className='text-4xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420]'>
             About VIZL Web Agency
           </h2>
           <p className='mb-4'>

@@ -1,72 +1,72 @@
-"use client";
+"use client"
 
-import React, { useRef, useEffect, useState } from "react";
-import { gsap } from "gsap";
-import { useTheme } from "../context/ThemeContext";
-import { usePathname } from "next/navigation"; // detect route change
+import React, { useRef, useEffect, useState } from "react"
+import { gsap } from "gsap"
+import { useTheme } from "../context/ThemeContext"
+import { usePathname } from "next/navigation" // detect route change
 
 const ContactSection = () => {
-  const formRef = useRef<HTMLFormElement | null>(null);
-  const { theme } = useTheme();
-  const pathname = usePathname();
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const formRef = useRef<HTMLFormElement | null>(null)
+  const { theme } = useTheme()
+  const pathname = usePathname()
+  const [errors, setErrors] = useState<{ [key: string]: string }>({})
 
   useEffect(() => {
-    if (!formRef.current) return;
+    if (!formRef.current) return
 
-    gsap.set(formRef.current.children, { opacity: 0, y: 50 });
+    gsap.set(formRef.current.children, { opacity: 0, y: 50 })
     gsap.to(formRef.current.children, {
       opacity: 1,
       y: 0,
       duration: 0.8,
       ease: "power3.out",
       stagger: 0.2,
-    });
-  }, [pathname]);
+    })
+  }, [pathname])
 
   const inputBg =
     theme === "light"
       ? "bg-gray-100 text-black border-gray-300"
-      : "bg-gray-800 text-white border-gray-700";
+      : "bg-gray-800 text-white border-gray-700"
   const labelText =
     theme === "light"
       ? "text-gray-600 peer-focus:text-pink-500"
-      : "text-gray-400 peer-focus:text-pink-500";
+      : "text-gray-400 peer-focus:text-pink-500"
 
   // Simple validation function
   const validateForm = (data: {
-    name: string;
-    email: string;
-    message: string;
+    name: string
+    email: string
+    message: string
   }) => {
-    const newErrors: { [key: string]: string } = {};
+    const newErrors: { [key: string]: string } = {}
     if (!data.name || data.name.trim().length < 2)
-      newErrors.name = "Name must be at least 2 characters";
+      newErrors.name = "Name must be at least 2 characters"
     if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
-      newErrors.email = "Enter a valid email";
+      newErrors.email = "Enter a valid email"
     if (!data.message || data.message.trim().length < 10)
-      newErrors.message = "Message must be at least 10 characters";
-    return newErrors;
-  };
+      newErrors.message = "Message must be at least 10 characters"
+    return newErrors
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const form = e.currentTarget;
+    const form = e.currentTarget
 
     const formData = {
       name: (form.elements.namedItem("name") as HTMLInputElement)?.value,
       email: (form.elements.namedItem("email") as HTMLInputElement)?.value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         ?.value,
-    };
+    }
 
-    const validationErrors = validateForm(formData);
+    const validationErrors = validateForm(formData)
     if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
+      setErrors(validationErrors)
+      return
     } else {
-      setErrors({});
+      setErrors({})
     }
 
     try {
@@ -74,21 +74,21 @@ const ContactSection = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-      });
+      })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (data.success) {
-        alert("✅ Message sent successfully!");
-        form.reset();
+        alert("✅ Message sent successfully!")
+        form.reset()
       } else {
-        alert("❌ Failed to send message. Try again later.");
+        alert("❌ Failed to send message. Try again later.")
       }
     } catch (err) {
-      console.error(err);
-      alert("❌ Server error. Try again later.");
+      console.error(err)
+      alert("❌ Server error. Try again later.")
     }
-  };
+  }
 
   return (
     <section
@@ -96,7 +96,7 @@ const ContactSection = () => {
         theme === "light" ? "bg-white text-black" : "text-white"
       }`}>
       <div className='max-w-4xl mx-auto text-center mb-12'>
-        <h2 className='text-4xl inline-block md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-red-500 via-purple-500 to-pink-500 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(236,72,153,0.8)]'>
+        <h2 className='text-4xl inline-block md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420] text-transparent bg-clip-text'>
           Contact Us
         </h2>
         <p
@@ -170,20 +170,19 @@ const ContactSection = () => {
           <button
             type='submit'
             className='relative px-8 py-3 text-white font-semibold rounded-full 
-        bg-gradient-to-r from-red-500 via-purple-500 to-pink-500 
+        bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420]
         shadow-[0_0_15px_rgba(236,72,153,0.6)] inline-block
         transition-all duration-500
         hover:shadow-[0_0_25px_rgba(236,72,153,0.9)]
         hover:scale-105 cursor-pointer
         before:absolute before:inset-0 before:rounded-full
-        before:bg-gradient-to-r before:from-red-500 before:via-purple-500 before:to-pink-500
         before:blur-xl before:opacity-50 before:animate-pulse'>
             Send now
           </button>
         </div>
       </form>
     </section>
-  );
-};
+  )
+}
 
-export default ContactSection;
+export default ContactSection

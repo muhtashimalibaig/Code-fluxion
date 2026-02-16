@@ -68,7 +68,7 @@ const ServicesSection = () => {
   return (
     <section className='w-full pt-32 pb-10 px-6 md:px-20'>
       <div className='max-w-6xl mx-auto text-center mb-12'>
-        <h2 className='text-4xl md:text-5xl font-extrabold mb-4 inline bg-gradient-to-r from-red-500 via-purple-500 to-pink-500 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(236,72,153,0.8)]'>
+        <h2 className='text-4xl md:text-5xl font-extrabold mb-4 inline bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420] text-transparent bg-clip-text'>
           Our Services
         </h2>
         <p className='text-lg md:text-xl max-w-2xl mx-auto'>
@@ -84,11 +84,11 @@ const ServicesSection = () => {
             className='group relative p-8 rounded-3xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 shadow-2xl'>
             {/* Gradient overlay */}
             <div
-              className={`absolute inset-0 bg-gradient-to-br ${service.darkGradient} opacity-80 group-hover:opacity-50 group-hover:bg-gradient-to-br ${service.lightGradient} transition-all duration-500`}
+              className={`absolute inset-0 bg-gradient-to-br ${service.darkGradient} opacity-100 group-hover:opacity-50 group-hover:bg-gradient-to-br ${service.lightGradient} transition-all duration-500`}
             />
 
             {/* Content */}
-            <div className='relative z-10 flex flex-col items-start gap-4'>
+            <div className='relative z-10 flex flex-col items-start gap-4 text-white'>
               <div className='mb-4'>{service.icon}</div>
               <h3 className='text-2xl font-bold'>{service.title}</h3>
               <p className='text-gray-200'>{service.description}</p>

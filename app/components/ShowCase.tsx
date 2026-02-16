@@ -1,35 +1,35 @@
-"use client";
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
-import Card1 from "../../public/Card1.jpg";
-import Card2 from "../../public/Card2.jpg";
-import Card3 from "../../public/Card3.jpg";
-import GlowButton from "./GlowButton";
-import { useTheme } from "../context/ThemeContext";
+"use client"
+import React, { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Image from "next/image"
+import Card1 from "../../public/Card1.jpg"
+import Card2 from "../../public/Card2.jpg"
+import Card3 from "../../public/Card3.jpg"
+import GlowButton from "./GlowButton"
+import { useTheme } from "../context/ThemeContext"
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 const ShowCase = () => {
-  const { theme } = useTheme();
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const { theme } = useTheme()
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([])
 
-  const images = [Card1, Card2, Card3];
+  const images = [Card1, Card2, Card3]
   const title = [
     "Responsive Web Design",
     "Full-Stack Development",
     "Social Media Integration & SEO",
-  ];
+  ]
   const description = [
     "Create stunning websites that look perfect on any device, ensuring a seamless experience for your visitors on mobile, tablet, and desktop.",
     "Build robust and scalable web applications with complete front-end and back-end functionality, tailored to meet your business needs.",
     "Enhance your online presence by integrating social media platforms and optimizing your site for search engines, helping your business reach a wider audience.",
-  ];
+  ]
 
   useEffect(() => {
     cardsRef.current.forEach((card, index) => {
-      const direction = index % 2 === 0 ? -150 : 150;
+      const direction = index % 2 === 0 ? -70 : 70
 
       gsap.fromTo(
         card,
@@ -47,10 +47,10 @@ const ShowCase = () => {
             scrub: true,
             pinSpacing: false,
           },
-        }
-      );
-    });
-  }, []);
+        },
+      )
+    })
+  }, [])
 
   return (
     <section className='my-20 px-6 md:px-20'>
@@ -59,22 +59,28 @@ const ShowCase = () => {
           className='
           text-4xl sm:text-5xl md:text-5xl font-extrabold 
           inline-block
-          bg-gradient-to-r from-red-500 via-purple-500 to-pink-500
+          bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420]
           text-transparent bg-clip-text 
-          drop-shadow-[0_0_10px_rgba(236,72,153,0.8)]
         '>
           Our Key Services
         </h2>
       </div>
 
-      <div className='flex flex-col gap-10 items-center'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
         {images.map((src, index) => (
           <div
             key={index}
             ref={(el) => {
-              cardsRef.current[index] = el;
+              cardsRef.current[index] = el
             }}
-            className='border shadow-lg rounded-lg p-6 sm:p-8 w-full md:w-3/4 lg:w-2/3'>
+            className={`border shadow-lg rounded-lg p-6 sm:p-8 w-full 
+                transition-transform duration-300 ease-out
+                hover:scale-105 hover:shadow-2xl hover:-translate-y-2
+                ${
+                  theme === "light"
+                    ? "hover:shadow-green-300"
+                    : "hover:shadow-green-700/40"
+                }`}>
             <Image
               src={src}
               alt={`Card ${index + 1}`}
@@ -95,7 +101,7 @@ const ShowCase = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ShowCase;
+export default ShowCase

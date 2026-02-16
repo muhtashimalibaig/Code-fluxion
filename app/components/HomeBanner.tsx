@@ -1,5 +1,5 @@
-import React from "react";
-import GlowButton from "./GlowButton";
+import React from "react"
+import GlowButton from "./GlowButton"
 
 const HomeBanner = () => {
   return (
@@ -10,7 +10,7 @@ const HomeBanner = () => {
             <h1
               className='
                 text-5xl font-extrabold mb-4 
-                bg-gradient-to-r from-red-500 via-purple-500 to-pink-500 
+                bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420]
                 text-transparent bg-clip-text 
                 drop-shadow-[0_0_10px_rgba(236,72,153,0.8)] 
                 animate-pulse
@@ -32,7 +32,7 @@ const HomeBanner = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default HomeBanner;
+export default HomeBanner

@@ -36,7 +36,7 @@ const TestimonialSection = () => {
   return (
     <section className='w-full pt-32 pb-10 px-6 md:px-20'>
       <div className='max-w-6xl mx-auto text-center mb-12'>
-        <h2 className='text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-red-500 via-purple-500 to-pink-500 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(236,72,153,0.8)]'>
+        <h2 className='text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420] text-transparent bg-clip-text'>
           Client Testimonial
         </h2>
         <p className='text-lg md:text-xl max-w-2xl mx-auto'>
@@ -64,7 +64,7 @@ const TestimonialSection = () => {
             {testimonial.feedback.split("VIZL WEB AGENCY").map((part, i, arr) =>
               i < arr.length - 1 ? (
                 <>
-                  <span className='bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-purple-500 to-pink-500 drop-shadow-[0_0_8px_rgba(236,72,153,0.7)] font-bold'>
+                  <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420] font-bold'>
                     VIZL WEB AGENCY
                   </span>
                   {part}
@@ -78,14 +78,14 @@ const TestimonialSection = () => {
           {/* Client Info */}
           <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0'>
             <div>
-              <h4 className='text-xl font-bold'>{testimonial.clientName}</h4>
+              <h4 className='text-xl font-bold text-green-500'>{testimonial.clientName}</h4>
               <p className='text-gray-500'>{testimonial.clientRole}</p>
             </div>
             <a
               href={testimonial.website}
               target='_blank'
               rel='noopener noreferrer'
-              className='text-pink-500 font-semibold hover:underline'>
+              className='text-green-400 font-semibold hover:underline'>
               Visit Website
             </a>
           </div>

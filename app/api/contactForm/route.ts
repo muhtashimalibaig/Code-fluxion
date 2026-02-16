@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 export async function POST(req: NextRequest) {
   try {
     const { name, email, message } = await req.json();
-
+    // console.log(process.env.SMTP_HOST);
     // Configure your email transporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -15,6 +15,9 @@ export async function POST(req: NextRequest) {
         pass: process.env.SMTP_PASS,
       },
     });
+
+    const transporterStatus = await transporter.verify();
+    console.log("Transporter Connected:", transporterStatus);
 
     // Send the email
     await transporter.sendMail({
