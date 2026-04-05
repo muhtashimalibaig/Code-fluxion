@@ -56,9 +56,11 @@ const Navbar: React.FC = () => {
       <div className='hidden md:flex items-center gap-6 relative'>
         {/* About Dropdown */}
         <div className='relative group'>
-          <Link href={'/about-agency'} className='font-semibold flex items-center gap-1 hover:underline transition-all'>
+          <Link
+            href={"/about-agency"}
+            className='font-semibold flex items-center gap-1 hover:underline transition-all'>
             About Us
-          </Link> 
+          </Link>
         </div>
 
         <Link
@@ -85,7 +87,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       <div
         ref={mobileMenuRef}
-        className={`fixed top-0 right-0 h-full w-3/4 md:hidden shadow-lg p-6 flex flex-col gap-6 z-40 transform translate-x-full opacity-0`}>
+        className={`bg-black fixed top-0 right-0 h-full w-3/4 md:hidden shadow-lg p-6 flex flex-col gap-6 z-40 transform translate-x-full opacity-0`}>
         {/* Close Button inside menu */}
         <button className='self-end mb-6' onClick={toggleMobileMenu}>
           <X size={30} />
@@ -94,10 +96,7 @@ const Navbar: React.FC = () => {
         {/* Mobile Links */}
         <div className='flex flex-col gap-4'>
           <Link href='/about-agency' onClick={() => setMobileOpen(false)}>
-            About Agency
-          </Link>
-          <Link href='/about-me' onClick={() => setMobileOpen(false)}>
-            About CEO
+            About Us
           </Link>
           <Link href='/services' onClick={() => setMobileOpen(false)}>
             Services
