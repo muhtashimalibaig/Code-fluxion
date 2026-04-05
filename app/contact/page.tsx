@@ -24,15 +24,6 @@ const ContactSection = () => {
     })
   }, [pathname])
 
-  const inputBg =
-    theme === "light"
-      ? "bg-gray-100 text-black border-gray-300"
-      : "bg-gray-800 text-white border-gray-700"
-  const labelText =
-    theme === "light"
-      ? "text-gray-600 peer-focus:text-pink-500"
-      : "text-gray-400 peer-focus:text-pink-500"
-
   // Simple validation function
   const validateForm = (data: {
     name: string
@@ -91,18 +82,12 @@ const ContactSection = () => {
   }
 
   return (
-    <section
-      className={`w-full py-32 px-6 md:px-20 ${
-        theme === "light" ? "bg-white text-black" : "text-white"
-      }`}>
+    <section className={`w-full py-32 px-6 md:px-20`}>
       <div className='max-w-4xl mx-auto text-center mb-12'>
         <h2 className='text-4xl inline-block md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420] text-transparent bg-clip-text'>
           Contact Us
         </h2>
-        <p
-          className={`${
-            theme === "light" ? "text-gray-700" : "text-gray-300"
-          } text-lg md:text-xl max-w-2xl mx-auto`}>
+        <p className={`text-gray-300 text-lg md:text-xl max-w-2xl mx-auto`}>
           Have a project in mind? Let's build something amazing together. Fill
           out the form below and we’ll get back to you as soon as possible.
         </p>
@@ -118,7 +103,7 @@ const ContactSection = () => {
             type='text'
             id='name'
             placeholder='Your Name'
-            className={`peer w-full p-4 rounded-xl ${inputBg} focus:outline-none `}
+            className={`peer w-full p-4 rounded-xl focus:outline-none border border-green-500`}
           />
 
           {errors.name && (
@@ -132,7 +117,7 @@ const ContactSection = () => {
             type='email'
             id='email'
             placeholder='Your Email'
-            className={`peer w-full p-4 rounded-xl ${inputBg} focus:outline-none `}
+            className={`peer w-full p-4 rounded-xl focus:outline-none border border-green-500`}
           />
 
           {errors.email && (
@@ -145,7 +130,7 @@ const ContactSection = () => {
           <textarea
             id='message'
             placeholder='Your Message'
-            className={`peer w-full p-4 rounded-xl ${inputBg} focus:outline-none  resize-none h-40`}
+            className={`peer w-full p-4 rounded-xl focus:outline-none border border-green-500 resize-none h-40`}
           />
 
           {errors.message && (
@@ -159,9 +144,9 @@ const ContactSection = () => {
             type='submit'
             className='relative px-8 py-3 text-white font-semibold rounded-full 
         bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420]
-        shadow-[0_0_15px_rgba(236,72,153,0.6)] inline-block
+         inline-block
         transition-all duration-500
-        hover:shadow-[0_0_25px_rgba(236,72,153,0.9)]
+        hover:shadow-[0_0_25px_#08cb00]
         hover:scale-105 cursor-pointer
         before:absolute before:inset-0 before:rounded-full
         before:blur-xl before:opacity-50 before:animate-pulse'>
