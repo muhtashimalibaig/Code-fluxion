@@ -1,18 +1,18 @@
-"use client";
+"use client"
 
-import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
-import AboutImage from "../../public/AboutImage.jpg";
-import GlowButton from "../components/GlowButton";
+import React, { useRef, useEffect } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Image from "next/image"
+import AboutImage from "../../public/About.png"
+import GlowButton from "../components/GlowButton"
 // import AgencyImage from "../../public/agency.jpg"; // Replace with your actual image path
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 const AboutAgency = () => {
-  const textRef = useRef<HTMLDivElement | null>(null);
-  const imageRef = useRef<HTMLDivElement | null>(null);
+  const textRef = useRef<HTMLDivElement | null>(null)
+  const imageRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     // Animate text
@@ -29,8 +29,8 @@ const AboutAgency = () => {
           start: "top 80%",
           toggleActions: "play none none reverse",
         },
-      }
-    );
+      },
+    )
 
     // Animate image
     gsap.fromTo(
@@ -46,9 +46,9 @@ const AboutAgency = () => {
           start: "top 80%",
           toggleActions: "play none none reverse",
         },
-      }
-    );
-  }, []);
+      },
+    )
+  }, [])
 
   return (
     <section className='w-full pt-32 pb-10 overflow-hidden px-6 md:px-20'>
@@ -56,10 +56,10 @@ const AboutAgency = () => {
         {/* Text Section */}
         <div ref={textRef} className='md:w-1/2'>
           <h2 className='text-4xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420]'>
-            About VIZL Web Agency
+            About Code Fluxion
           </h2>
           <p className='mb-4'>
-            VIZL Web Agency specializes in creating modern, responsive, and
+            Code Fluxion Agency specializes in creating modern, responsive, and
             high-performing websites. We provide end-to-end web development
             services including:
           </p>
@@ -73,10 +73,7 @@ const AboutAgency = () => {
             <li>Custom Web Solutions tailored to your business needs</li>
           </ul>
           <div className='mt-5'>
-            <GlowButton
-              text="See CEO'S Profile"
-              link='https://deft-druid-58a41e.netlify.app/'
-            />
+            <GlowButton text='Contact Us' link='/' />
           </div>
         </div>
 
@@ -90,7 +87,7 @@ const AboutAgency = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default AboutAgency;
+export default AboutAgency

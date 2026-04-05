@@ -10,7 +10,7 @@ const Footer = () => {
         {/* Agency Info */}
         <div>
           <h2 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420] underline'>
-            VIZL WEB AGENCY
+            Code Fluxion Agency
           </h2>
           <p className='mt-4 text-gray-400'>
             Crafting modern websites and applications to boost your online
@@ -39,22 +39,29 @@ const Footer = () => {
           </h3>
           <ul className='space-y-2'>
             <li>
-              <Link href={"/home"}>Home</Link>
+              <Link className='hover:underline' href={"/"}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link href={"/about"}>About</Link>
+              <Link className='hover:underline' href={"/about-agency"}>
+                About
+              </Link>
             </li>
             <li>
-              <Link href={"/services"}>Services</Link>
+              <Link className='hover:underline' href={"/services"}>
+                Services
+              </Link>
             </li>
             <li>
-              <Link href={"/portfolio"}>Portfolio</Link>
+              <Link className='hover:underline' href={"/"}>
+                Portfolio
+              </Link>
             </li>
             <li>
-              <Link href={"/contact"}>Contact</Link>
-            </li>
-            <li>
-              <Link href={"/faq"}>FAQ</Link>
+              <Link className='hover:underline' href={"/contact"}>
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
@@ -66,16 +73,24 @@ const Footer = () => {
           </h3>
           <ul className='space-y-2'>
             <li>
-              <Link href={"/services"}>Web Development</Link>
+              <Link className='hover:underline' href={"/services"}>
+                Web Development
+              </Link>
             </li>
             <li>
-              <Link href={"/services"}>UI/UX Design</Link>
+              <Link className='hover:underline' href={"/services"}>
+                UI/UX Design
+              </Link>
             </li>
             <li>
-              <Link href={"/services"}>SEO & Marketing</Link>
+              <Link className='hover:underline' href={"/services"}>
+                SEO & Marketing
+              </Link>
             </li>
             <li>
-              <Link href={"/services"}>E-Commerce Solutions</Link>
+              <Link className='hover:underline' href={"/services"}>
+                E-Commerce Solutions
+              </Link>
             </li>
           </ul>
         </div>
@@ -84,14 +99,14 @@ const Footer = () => {
         <div>
           <h3 className='text-xl font-semibold mb-4 text-green-400'>Contact</h3>
           <p className='mt-2 text-gray-400'>
-            Email: muhtashimmughal5@gmail.com
+            Email: muhtashimalibaig@gmail.com
           </p>
           <p className='mt-2 text-gray-400'>Phone: 0328 4202722</p>
         </div>
       </div>
 
       <div className='mt-12 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm'>
-        © {new Date().getFullYear()} VIZL WEB AGENCY. All rights reserved.
+        © {new Date().getFullYear()} CODE FLUXION AGENCY. All rights reserved.
       </div>
     </footer>
   )

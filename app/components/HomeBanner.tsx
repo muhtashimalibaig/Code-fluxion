@@ -10,12 +10,12 @@ const HomeBanner = () => {
             <h1
               className='
                 text-5xl font-extrabold mb-4 
-                bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420]
+                bg-linear-to-r from-[#08cb00] via-[#6be600] to-[#aaf420]
                 text-transparent bg-clip-text 
-                drop-shadow-[0_0_10px_rgba(236,72,153,0.8)] 
+                drop-shadow-[0_0_10px_#08cb00] 
                 animate-pulse
               '>
-              VIZL WEB AGENCY
+              CODE FLUXION AGENCY
             </h1>
             <p className='text-lg max-w-xl mb-6'>
               We create modern, responsive, and high-performing websites that

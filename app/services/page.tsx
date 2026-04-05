@@ -54,14 +54,6 @@ const services = [
     darkGradient: "from-red-800 via-orange-800 to-yellow-800",
     lightGradient: "from-red-400 via-orange-400 to-yellow-400",
   },
-  {
-    title: "Cloud Integration",
-    description:
-      "Integrate cloud services to scale your business, improve collaboration, and ensure reliable data storage.",
-    icon: <Server className='w-12 h-12' />,
-    darkGradient: "from-gray-800 via-blue-900 to-indigo-900",
-    lightGradient: "from-gray-400 via-blue-400 to-indigo-400",
-  },
 ];
 
 const ServicesSection = () => {

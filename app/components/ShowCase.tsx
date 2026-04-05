@@ -59,7 +59,7 @@ const ShowCase = () => {
           className='
           text-4xl sm:text-5xl md:text-5xl font-extrabold 
           inline-block
-          bg-gradient-to-r from-[#08cb00] via-[#6be600] to-[#aaf420]
+          bg-linear-to-r from-[#08cb00] via-[#6be600] to-[#aaf420]
           text-transparent bg-clip-text 
         '>
           Our Key Services
@@ -73,7 +73,7 @@ const ShowCase = () => {
             ref={(el) => {
               cardsRef.current[index] = el
             }}
-            className={`border shadow-lg rounded-lg p-6 sm:p-8 w-full 
+            className={`border border-gray-700 shadow-lg rounded-lg p-6 sm:p-8 w-full 
                 transition-transform duration-300 ease-out
                 hover:scale-105 hover:shadow-2xl hover:-translate-y-2
                 ${
@@ -95,7 +95,10 @@ const ShowCase = () => {
               {description[index]}
             </p>
             <div className='mt-5'>
-              <GlowButton text='Look At Our Projects' link='/portfolio' />
+              <GlowButton
+                text='Look At Our Projects'
+                link='https://muhtashim-portfolio.vercel.app/'
+              />
             </div>
           </div>
         ))}

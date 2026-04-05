@@ -76,7 +76,7 @@ const ContactSection = () => {
         body: JSON.stringify(formData),
       })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (data.success) {
         alert("✅ Message sent successfully!")
@@ -118,13 +118,9 @@ const ContactSection = () => {
             type='text'
             id='name'
             placeholder='Your Name'
-            className={`peer w-full p-4 rounded-xl ${inputBg} focus:outline-none focus:border-pink-500`}
+            className={`peer w-full p-4 rounded-xl ${inputBg} focus:outline-none `}
           />
-          <label
-            htmlFor='name'
-            className={`absolute left-4 top-4 transition-all duration-300 peer-placeholder-shown:top-9 peer-placeholder-shown:text-base ${labelText} peer-focus:top-[-10px] peer-focus:text-sm`}>
-            Name
-          </label>
+
           {errors.name && (
             <p className='text-red-500 mt-1 text-sm'>{errors.name}</p>
           )}
@@ -136,13 +132,9 @@ const ContactSection = () => {
             type='email'
             id='email'
             placeholder='Your Email'
-            className={`peer w-full p-4 rounded-xl ${inputBg} focus:outline-none focus:border-pink-500`}
+            className={`peer w-full p-4 rounded-xl ${inputBg} focus:outline-none `}
           />
-          <label
-            htmlFor='email'
-            className={`absolute left-4 top-4 transition-all duration-300 peer-placeholder-shown:top-9 peer-placeholder-shown:text-base ${labelText} peer-focus:top-[-10px] peer-focus:text-sm`}>
-            Email
-          </label>
+
           {errors.email && (
             <p className='text-red-500 mt-1 text-sm'>{errors.email}</p>
           )}
@@ -153,13 +145,9 @@ const ContactSection = () => {
           <textarea
             id='message'
             placeholder='Your Message'
-            className={`peer w-full p-4 rounded-xl ${inputBg} focus:outline-none focus:border-pink-500 resize-none h-40`}
+            className={`peer w-full p-4 rounded-xl ${inputBg} focus:outline-none  resize-none h-40`}
           />
-          <label
-            htmlFor='message'
-            className={`absolute left-4 top-4 transition-all duration-300 peer-placeholder-shown:top-9 peer-placeholder-shown:text-base ${labelText} peer-focus:top-[-10px] peer-focus:text-sm`}>
-            Message
-          </label>
+
           {errors.message && (
             <p className='text-red-500 mt-1 text-sm'>{errors.message}</p>
           )}

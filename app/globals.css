@@ -25,7 +25,7 @@ body {
 }
 #image {
   position: relative;
-  background-image: url("/homebanner.jpg");
+  background-image: url("./../public/Home.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -45,7 +45,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.719); /* controls the darkness */
+  background: rgba(0, 0, 0, 0.525); /* controls the darkness */
   z-index: 0;
 }
 
